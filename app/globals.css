@@ -4,20 +4,20 @@
 
 @layer components {
   .main {
-    @apply bg-white flex justify-center h-screen;
+    @apply bg-white flex justify-center h-screen w-screen;
   }
   /* @apply sm:border-black sm:border w-screen sm:max-w-[360px] h-screen self-center p-4; */
 
   .innerContainer {
-    @apply w-screen sm:max-w-[360px] h-full self-center p-4;
+    @apply w-full sm:max-w-[360px] h-full p-6;
   }
 
   .button {
-    @apply bg-black hover:bg-transparent hover:border hover:border-black hover:text-black hover:bg-blend-darken w-full h-[50px] font-semibold text-white rounded-sm;
+    @apply bg-black hover:bg-transparent hover:border hover:border-black hover:text-black hover:bg-blend-darken w-full text-xl h-[59px] font-semibold text-white rounded-sm transition-all duration-200 cursor-pointer;
   }
 
   .heading {
-    @apply text-black font-bold text-2xl font-sans py-4;
+    @apply text-black font-bold text-3xl font-sans py-4;
   }
 
   .text {
@@ -25,14 +25,14 @@
   }
 
   .label {
-    @apply text-black font-bold text-lg font-sans mt-6 mb-3;
+    @apply text-black font-bold text-xl font-sans mt-6 mb-3;
   }
 
   .input {
     @apply min-h-[50px] w-full border border-gray-300 rounded-sm pl-4 outline-black;
   }
   .selectCatogoryButton {
-    @apply min-h-[50px] rounded-full w-full border border-black text-black hover:text-white hover:bg-black pl-3 flex items-center mb-5
+    @apply cursor-pointer transition-all duration-200 min-h-[59px] rounded-full w-full border border-black text-black hover:text-white hover:bg-black pl-3 flex items-center mb-5
   }
 
   .selectCatogoryText {
