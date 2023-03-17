@@ -4,11 +4,12 @@
 
 @layer components {
   .main {
-    @apply bg-white flex justify-center ;
+    @apply bg-white flex justify-center h-screen;
   }
+  /* @apply sm:border-black sm:border w-screen sm:max-w-[360px] h-screen self-center p-4; */
 
   .innerContainer {
-    @apply sm:border-black sm:border w-screen sm:max-w-[360px] h-screen self-center p-4;
+    @apply w-screen sm:max-w-[360px] h-full self-center p-4;
   }
 
   .button {
