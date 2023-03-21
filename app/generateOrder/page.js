@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import QRCode from "react-qr-code";
+import Header from "../../components/Header";
 
 export default function selectSize() {
   return (
     <div className="main">
+            <Header />
+
       <div className="innerContainer px-5 flex flex-col justify-between">
         <div>
           <h2 className="heading">Your Results</h2>
@@ -39,7 +44,7 @@ export default function selectSize() {
           </div>
         </div>
 
-        <div>
+        <div className="mt-6">
           <Link href={"/"}>
             <button className="button mb-3">Return</button>
           </Link>

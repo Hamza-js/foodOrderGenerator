@@ -1,9 +1,15 @@
+'use client'
 import Link from "next/link";
 
+import Header from "../../components/Header"
+
 export default function Requirments() {
+
   return (
     <div className="main">
+           <Header />
       <div className="innerContainer px-5">
+
         <h2 className="heading">Input Requirements</h2>
         <p className="text">Either enter Calories required or Proteins Required or BOTH</p>
         <div>
@@ -16,7 +22,7 @@ export default function Requirments() {
         </div>
 
         <Link href={'/selectCategory'}>
-          <button className="button mt-7" >Next</button>
+          <button className="button mt-7">Next</button>
         </Link>
       </div>
     </div>
