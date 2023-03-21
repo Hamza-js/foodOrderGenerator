@@ -17,7 +17,7 @@ export default function selectSize() {
           <QRCode
             value="Walnut, Ce, Apple, Orange, Milk"
             size={256}
-            style={{ height: 340, marginBottom:20, maxWidth: "100%", width: "100%" }}
+            style={{ height: 280, marginBottom:20, maxWidth: "100%", width: "100%" }}
             viewBox={`0 0 256 256`}
           />
 
