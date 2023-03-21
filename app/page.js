@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="main">
       <div className="innerContainer">
-        <div className="mt-6">
+        <div className="mt-6 mx-5">
           <Link href={`/requirements`}>
             <button className="button">Order Now</button>
           </Link>
