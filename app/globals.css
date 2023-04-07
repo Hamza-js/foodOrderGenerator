@@ -6,12 +6,13 @@
   .main {
     @apply bg-white flex justify-center items-center h-full w-screen flex-col;
   }
-  /* @apply sm:border-black sm:border w-screen sm:max-w-[360px] h-screen self-center p-4; */
 
   .innerContainer {
-    @apply w-full sm:max-w-[360px] h-full pt-0;
+    @apply w-full max-w-[360px] max-h-[844px] h-screen pt-0 bg-[#7264E4];
   }
-
+  .innerContainerWhite {
+    @apply w-full sm:max-w-[360px] h-screen pt-0 bg-white;
+  }
   .button {
     @apply bg-black hover:bg-transparent hover:border hover:border-black hover:text-black hover:bg-blend-darken w-full text-xl h-[59px] font-semibold text-white rounded-sm transition-all duration-200 cursor-pointer;
   }
@@ -32,10 +33,10 @@
     @apply min-h-[50px] w-full border border-gray-300 rounded-sm pl-4 outline-black;
   }
   .selectCatogoryButton {
-    @apply cursor-pointer transition-all duration-200 min-h-[59px] rounded-full w-full border border-black text-black hover:text-white hover:bg-black pl-3 flex items-center mb-5
+    @apply cursor-pointer transition-all duration-200 min-h-[59px] rounded-full w-full border border-black text-black hover:text-white hover:bg-black pl-3 flex items-center mb-5;
   }
 
   .selectCatogoryText {
-    @apply  text-lg font-sans font-semibold;
-  } 
+    @apply text-lg font-sans font-semibold;
+  }
 }
