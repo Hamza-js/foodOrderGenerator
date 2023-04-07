@@ -4,22 +4,19 @@
 
 @layer components {
   .main {
-    @apply bg-white flex items-center h-screen w-screen flex-col;
+    @apply items-center w-screen bg-red-700 min-h-screen flex flex-col;
   }
 
   .innerContainer {
-    @apply w-full max-w-[420px] max-h-[844px] h-full pt-0 bg-[#7264E4];
+    @apply w-full max-w-[420px] h-screen bg-[#7264E4];
   }
   .innerContainerWhite {
-    @apply w-full sm:max-w-[360px] h-screen pt-0 bg-white;
+    @apply w-full max-w-[420px] h-screen bg-white;
   }
   .button {
     @apply bg-black hover:bg-transparent hover:border hover:border-black hover:text-black hover:bg-blend-darken w-full text-xl h-[59px] font-semibold text-white rounded-sm transition-all duration-200 cursor-pointer;
   }
 
-  .heading {
-    @apply text-black font-bold text-3xl font-sans py-4;
-  }
 
   .text {
     @apply text-black text-lg font-sans;
