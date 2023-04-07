@@ -24,7 +24,7 @@ export default function selectCategory() {
         </div>
 
         <Link href={"/selectSize"}>
-          <div className="flex items-center cursor-pointer w-full justify-betwee border relative py-4">
+          <div className="flex items-center cursor-pointer w-full justify-betwee relative py-4">
             <div className=" relative min-h-[99px] rounded-3xl w-full border bg-[#FF6C35] flex items-center pl-3 justify-between">
               <p className="text-white font-semibold text-base">
                 Frozen Yogurt
@@ -40,7 +40,7 @@ export default function selectCategory() {
           </div>
         </Link>
         <Link href={"/selectSize"}>
-          <div className="flex items-center cursor-pointer w-full justify-betwee border relative py-4">
+          <div className="flex items-center cursor-pointer w-full justify-betwee relative py-4">
             <div className=" relative min-h-[99px] rounded-3xl w-full border bg-[#4BBFED] flex items-center pl-3 justify-between">
               <p className="text-white font-semibold text-base">
               Superfood
@@ -57,7 +57,7 @@ export default function selectCategory() {
         </Link>
 
         <Link href={"/selectSize"}>
-          <div className="flex items-center cursor-pointer w-full justify-betwee border relative py-4">
+          <div className="flex items-center cursor-pointer w-full justify-betwee relative py-4">
             <div className=" relative min-h-[99px] rounded-3xl w-full border bg-[#FFCA46] flex items-center pl-3 justify-between">
               <p className="text-white font-semibold text-base">
               Juices
@@ -73,7 +73,7 @@ export default function selectCategory() {
           </div>
         </Link>
         <Link href={"/selectSize"}>
-          <div className="flex items-center cursor-pointer w-full justify-betwee border relative py-4">
+          <div className="flex items-center cursor-pointer w-full justify-betwee relative py-4">
             <div className=" relative min-h-[99px] rounded-3xl w-full border bg-[#EF4F8B] flex items-center pl-3 justify-between">
               <p className="text-white font-semibold text-base">
               Smoothie

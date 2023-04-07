@@ -7,9 +7,9 @@ import Header from "../../components/Header";
 export default function selectSize() {
   return (
     <div className="main">
-            <Header />
+            {/* <Header /> */}
 
-      <div className="innerContainer px-5 flex flex-col justify-between">
+      <div className="innerContainerWhite px-5 flex flex-col justify-between">
         <div>
           <h2 className="heading">Your Results</h2>
           <p className="text pb-6">Show this at the counter</p>

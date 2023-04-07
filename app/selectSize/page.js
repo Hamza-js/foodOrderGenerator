@@ -18,7 +18,6 @@ export default function selectSize() {
           </p>
         </div>
 
-        
         <Link href={"/resultsPreview"}>
           <div className="min-h-[74px] w-full rounded-[26px] bg-[#F7F6FB] pl-4 flex items-center mb-5">
             <p className="selectCatogoryText">8oz</p>
@@ -26,12 +25,12 @@ export default function selectSize() {
         </Link>
 
         <Link href={"/resultsPreview"}>
-        <div className="min-h-[74px] w-full rounded-[26px] bg-[#F7F6FB] pl-4 flex items-center mb-5">
+          <div className="min-h-[74px] w-full rounded-[26px] bg-[#F7F6FB] pl-4 flex items-center mb-5">
             <p className="text-black font-medium text-xl">12oz</p>
           </div>
         </Link>
         <Link href={"/resultsPreview"}>
-        <div className="min-h-[74px] w-full rounded-[26px] bg-[#F7F6FB] pl-4 flex items-center mb-5">
+          <div className="min-h-[74px] w-full rounded-[26px] bg-[#F7F6FB] pl-4 flex items-center mb-5">
             <p className="text-black font-medium text-xl">16oz</p>
           </div>
         </Link>
