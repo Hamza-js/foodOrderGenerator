@@ -84,7 +84,7 @@ export default function selectSize() {
         </div>
 
         <div className=" w-full h-[120px] bg-[#7264E4] rounded-t-[25px] z-[1]">
-          <Link href={`/`}>
+          <Link href={'/'}>
             <div className="bg-white text-black hover:bg-[#5e53b5] hover:text-white mx-[18px] my-[30px] py-[11px] flex justify-center items-center rounded-[18px] cursor-pointer">
               <p className="text-[18px] font-medium ">New Order</p>
               <ChevronRightIcon className="h-7 w-7 pl-1" />

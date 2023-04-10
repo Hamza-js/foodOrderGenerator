@@ -7,7 +7,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 export default function Home() {
   return (
     <div className="main">
-      <Image className="absolute bottom-0" src={BD} alt="Example" width={390}  />
+      <Image className="absolute bottom-0" src={BD} alt="Example" width={420} />
       <div className="innerContainer flex justify-between flex-col">
         <div className="flex flex-col w-full items-center mt-[141px]">
           <Image
