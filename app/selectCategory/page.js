@@ -16,7 +16,7 @@ export default function selectCategory() {
     <div className="main">
       <div className="innerContainerWhite  flex flex-col">
         <Header url={pathname}/>
-        <div className="px-5 mt-[60px]">
+        <div className="px-5 mt-[75px]">
           <div className="flex items-center justify-center flex-col text-center">
             <h2 className="text-black font-semibold text-2xl font-sans pb-3 ">
               Select Category

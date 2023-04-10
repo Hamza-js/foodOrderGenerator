@@ -12,7 +12,7 @@ export default function selectSize() {
     <div className="main">
       <div className="innerContainerWhite flex flex-col justify-between">
         <Header url={pathname} />
-        <div className="px-8 mt-[60px]">
+        <div className="px-8 mt-[75px]">
           <div className="flex items-center justify-center flex-col text-center">
             <h2 className="text-black font-semibold text-2xl font-sans py-4 ">
               Result
@@ -70,22 +70,17 @@ export default function selectSize() {
             </div>
           </div>
         </div>
-        {/* <div className="mt-12">
-          <Link href={"/generateOrder"}>
-            <button className="button mb-3">Generate Order</button>
-          </Link>
-        </div> */}
         <div className="w-full h-[120px] bg-[#7264E4] rounded-t-[25px] z-[1] flex flex-row justify-between">
           <Link href={"/selectSize"}>
             <div className="bg-[#7264E4] mx-[18px] my-[30px] py-[11px] flex justify-center items-center rounded-[18px] cursor-pointer">
-              <ChevronLeftIcon className="h-5 w-5 pt-[3px] pr-1 text-white" />
+              <ChevronLeftIcon className="h-7 w-7 pt-[3px] pr-1 text-white" />
               <p className="font-mediums text-lg text-white">Previous</p>
             </div>
           </Link>
           <Link href={"/generateOrder"}>
             <div className="bg-white hover:bg-[#5e53b5] hover:text-white w-[178px] mx-[18px] my-[30px] py-[11px] flex justify-center items-center rounded-[18px] text-black cursor-pointer">
               <p className="font-mediums text-lg">Generate</p>
-              <ChevronRightIcon className="h-5 w-5 pt-1 pl-1" />
+              <ChevronRightIcon className="h-7 w-7 pt-1 pl-1" />
             </div>
           </Link>
         </div>
