@@ -34,12 +34,12 @@ export default function selectSize() {
             viewBox={`0 0 256 256`}
           />
 
-          <div className="rounded-xl border border-gray-400-500 mt-[25px]">
+          <div className="rounded-xl border border-gray-400-500 mt-[25px] mb-[25px] ">
             <div className="flex flex-row justify-between p-2">
               <p className="font-medium text-sm">Calories</p>
               <p className="font-medium text-sm">240 cal</p>
             </div>
-            <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between pb-[30px] mb-[30px] mt-[8px] px-3 w-full">
+            <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between pb-[30px] mt-[8px] px-3 w-full">
               <div className="flex flex-col w-full py-3 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base">Base</p>
                 <div className="flex flex-row w-full justify-between">
@@ -50,7 +50,7 @@ export default function selectSize() {
 
               <div className="flex flex-col w-full py-3 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base">Fruit</p>
-                <div className="flex flex-row w-full justify-between">
+                <div className="flex flex-row w-full justify-between mb-1">
                   <p className=" font-normal text-xs">Apple</p>
                   <p className=" font-normal text-xs">20 Cal</p>
                 </div>
