@@ -1,21 +1,13 @@
-import { BeakerIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/navigation";
-
-const header = () => {
-  const router = useRouter();
-
-  function handleGoBack() {
-    router.back();
-  }
-
+const header = (url) => {
+  console.log(url);
   return (
-    <div
-      onClick={handleGoBack}
-      className="w-full cursor-pointer sm:max-w-[360px] h-12 pl-2 border-b border-b-gray-200"
-    >
-      <div className="flex items-center h-full">
-        <ChevronLeftIcon className="h-4" />
-        <p>Back</p>
+    <div className="w-full h-12 px-5">
+      <div className="flex gap-3 h-full items-end justify-between">
+        <div className="bg-[#7264E4] h-[3px] w-full rounded-full"></div>
+        <div className="bg-[#7264E4] h-[3px] w-full rounded-full"></div>
+        <div className="bg-[#7264E4] h-[3px] w-full rounded-full"></div>
+        <div className="bg-[#7264E4] h-[3px] w-full rounded-full"></div>
+        <div className="bg-[#7264E4] h-[3px] w-full rounded-full"></div>
       </div>
     </div>
   );
