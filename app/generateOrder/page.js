@@ -1,15 +1,17 @@
 "use client";
+import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 import QRCode from "react-qr-code";
 import Header from "../../components/Header";
 
 export default function selectSize() {
+  const pathname = usePathname();
+
   return (
     <div className="main">
-            {/* <Header /> */}
-
       <div className="innerContainerWhite px-5 flex flex-col justify-between">
+        <Header url={pathname} />
         <div>
           <h2 className="heading">Your Results</h2>
           <p className="text pb-6">Show this at the counter</p>
@@ -17,7 +19,12 @@ export default function selectSize() {
           <QRCode
             value="Walnut, Ce, Apple, Orange, Milk"
             size={256}
-            style={{ height: 280, marginBottom:20, maxWidth: "100%", width: "100%" }}
+            style={{
+              height: 280,
+              marginBottom: 20,
+              maxWidth: "100%",
+              width: "100%",
+            }}
             viewBox={`0 0 256 256`}
           />
 
@@ -43,7 +50,6 @@ export default function selectSize() {
             </div>
           </div>
         </div>
-
         <div className="mt-6">
           <Link href={"/"}>
             <button className="button mb-3">Return</button>
