@@ -6,7 +6,7 @@ const header = (url) => {
     setPageUrl(url.url);
   }, [url]);
   return (
-    <div className="w-full h-12 px-5 absolute top-0 left-0">
+    <div className="w-full sm:max-h-[6vh] h-12 px-5 absolute top-0 left-0">
       <div className="flex gap-3 h-full items-end justify-between">
         <div
           className={`${
