@@ -76,10 +76,6 @@ export default function selectSize() {
                   <p className=" font-normal text-xs">20 Cal</p>
                 </div>
               </div>
-
-              <button className="bg-white hover:bg-[#5e53b5] rounded-full sm:w-1/2 h-[45px] sm:h-[25px] text-[#7264E4] font-medium text-base sm:text-xs">
-                Shuffle
-              </button>
             </div>
           </div>
         </div>
