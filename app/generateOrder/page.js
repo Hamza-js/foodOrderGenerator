@@ -24,15 +24,15 @@ export default function selectSize() {
           </div>
           <QRCode
             value="Walnut, Ce, Apple, Orange, Milk"
-            size={256}
+            // size={256}
             style={{
-              // height: 168,
-              marginBottom: 20,
-              maxWidth: "100%",
+            //   // height: 168,
+            //   marginBottom: 20,
+            //   maxWidth: "100%",
               width: "100%",
             }}
-            viewBox={`0 0 256 256`}
-            className="sm:h-[100px] sm:w-[100px] sm:mt-[5px] h-[168px]"
+            // viewBox={`0 0 256 256`}
+            className="sm:h-[100px] sm:w-[100px] sm:mt-[5px] h-[100px]"
           />
 
           <div className="rounded-xl border border-gray-400-500 mt-[25px] sm:my-[0px] mb-[25px]">
@@ -80,9 +80,9 @@ export default function selectSize() {
           </div>
         </div>
 
-        <div className=" absolute bottom-0 flex flex-col items-center justify-center sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#7264E4] sm:rounded-t-[15px] rounded-t-[25px] z-[1]">
+        <div className="absolute bottom-0 flex flex-col items-center justify-center sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#7264E4] sm:rounded-t-[15px] rounded-t-[25px] z-[1]">
           <Link href={"/"}>
-            <div className="bg-white hover:bg-[#5e53b5] hover:text-white w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer">
+            <div className="bg-white hover:bg-[#5e53b5] hover:text-white w-full sm:w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer">
               <p className="font-mediums text-lg sm:text-sm">Generate</p>
               <ChevronRightIcon className="h-7 w-7 sm:h-6 pt-1 pl-1" />
             </div>
