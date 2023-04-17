@@ -1,35 +1,14 @@
-"use client"
-
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import BD from "../images/Home/BG.png";
 import logo from "../images/Home/logo.png";
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon
-} from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
-  const [parentHeight, setParentHeight] = useState(0);
-
-  useEffect(() => {
-    const calculateParentHeight = () => {
-      const chromeHeight = window.innerHeight - document.documentElement.clientHeight;
-      setParentHeight(`calc(100vh - ${chromeHeight}px)`);
-    };
-
-    calculateParentHeight();
-
-    window.addEventListener("resize", calculateParentHeight);
-
-    return () => {
-      window.removeEventListener("resize", calculateParentHeight);
-    };
-  }, []);
+  var chromeHeight = window.innerHeight - document.documentElement.clientHeight;
 
   return (
-    <div className="mainHeight" style={{ height: parentHeight }}>
+    <div className="mainHeight" style={{height:chromeHeight}}>
       <Image className="absolute bottom-0" src={BD} alt="Example" width={420} />
       <div className="innerContainer flex justify-between flex-col">
         <div className="flex flex-col w-full items-center mt-[141px] sm:mt-12">
@@ -52,7 +31,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-      </div>
+      </div> 
     </div>
   );
 }
