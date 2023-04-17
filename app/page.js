@@ -2,13 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import BD from "../images/Home/BG.png";
 import logo from "../images/Home/logo.png";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 export default function Home() {
-  var chromeHeight = window.innerHeight - document.documentElement.clientHeight;
-
   return (
-    <div className="mainHeight" style={{height:chromeHeight}}>
+    <div className="mainHeight">
       <Image className="absolute bottom-0" src={BD} alt="Example" width={420} />
       <div className="innerContainer flex justify-between flex-col">
         <div className="flex flex-col w-full items-center mt-[141px] sm:mt-12">
