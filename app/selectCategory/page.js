@@ -5,20 +5,26 @@ import two from "../../images/selectCategory/2.png";
 import three from "../../images/selectCategory/3.png";
 import four from "../../images/selectCategory/4.png";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import Link from "next/link";
 import Header from "../../components/Header";
 
 export default function selectCategory() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { data } = router.query;
+
+  const newArr = data.map((i)=>(i))
+  console.log(newArr)
 
   return (
     <div className="mainHeight">
       <div className="innerContainerWhite  flex flex-col">
-        <Header url={pathname}/>
+        <Header url={pathname} />
         <div className="px-5 mt-[75px] sm:mt-[55px]">
           <div className="flex items-center justify-center flex-col text-center">
-          <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4 ">
+            <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4 ">
               Select Category
             </h2>
             <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
