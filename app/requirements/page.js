@@ -5,6 +5,8 @@ import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setGlobelCalories, setCatArr, setGlobelProtine } from "../Redux/slices/category";
 import { useRouter } from "next/navigation";
 
 export default function Requirments() {
@@ -13,8 +15,34 @@ export default function Requirments() {
   const [proteins, setProteins] = useState("");
   const [caloriesValid, setCaloriesValid] = useState(true);
   const [proteinsValid, setProteinsValid] = useState(true);
-  const [data, setData] = useState(null);
   const router = useRouter();
+  const dispatch = useDispatch();
+
+  async function handleSubmit() {
+    if (validateInputs()) {
+      const formData = new FormData();
+      formData.append("calories", calories);
+      formData.append("proteins", proteins);
+
+      try {
+        const response = await axios.post(
+          "http://hsicecream.herokuapp.com/api/requirements",
+          formData
+        );
+        if (response.status === 200) {
+          dispatch(setCatArr(response.data.data));
+          dispatch(setGlobelCalories(calories));
+          dispatch(setGlobelProtine(proteins));
+          router.push("/selectCategory");
+        } else {
+          console.error("API error:", response.statusText);
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Server Error");
+      }
+    }
+  }
 
   function validateInputs() {
     let valid = true;
@@ -29,35 +57,6 @@ export default function Requirments() {
       valid = false;
     }
     return valid;
-  }
-
-  async function handleSubmit() {
-    if (validateInputs()) {
-      // call the postData function with the form data
-      const formData = new FormData();
-      formData.append("calories", calories);
-      formData.append("proteins", proteins);
-
-      try {
-        const response = await axios.post(
-          "http://hsicecream.herokuapp.com/api/requirements",
-          formData
-        );
-        console.log(response.data);
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-        alert("Server Error");
-      }
-    }
-  }
-
-  function handleClick() {
-    handleSubmit();
-    router.push({
-      pathname: "/selectCategory",
-      query: data,
-    });
   }
 
   return (
@@ -125,20 +124,14 @@ export default function Requirments() {
               <p className="font-mediums text-lg text-white">Previous</p>
             </div>
           </Link>
-          {/* <Link
-            href={{
-              pathname: "/selectCategory",
-              query: data,
-            }}
-          > */}
+
           <button
             className="bg-white hover:bg-[#5e53b5] hover:text-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
-            onClick={handleClick}
+            onClick={handleSubmit}
           >
             <p className="font-mediums text-lg">Continue</p>
             <ChevronRightIcon className="h-7 w-7 pt-1 pl-1" />
           </button>
-          {/* </Link> */}
         </div>
       </div>
     </div>
