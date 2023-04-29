@@ -95,7 +95,7 @@ export default function selectSize() {
           <div className="rounded-xl border border-gray-400-500 sm:h-[30vh] mt-[25px] sm:my-[10px] mb-[25px]">
             <div className="flex flex-row justify-between sm:py-[4px] p-2">
               <p className="font-medium text-sm">Calories</p>
-              <p className="font-medium text-sm">{result.calories}</p>
+              <p className="font-medium text-sm">{result.sum}</p>
             </div>
             <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[20px] sm:pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
@@ -145,7 +145,7 @@ export default function selectSize() {
 
               <div className="flex flex-col w-full py-3 sm:py-1 pt-3 pb-7 sm:pb-3">
                 <p className=" font-semibold text-base sm:text-xs">Extra</p>
-                {result.collection[2].map((ingredient, i) => (
+                {result.collection[3].map((ingredient, i) => (
                   <div key={i} className="flex flex-row w-full justify-between">
                     <p className=" font-normal text-xs">
                       {ingredient.ingredient}
