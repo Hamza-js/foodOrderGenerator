@@ -60,7 +60,7 @@ export default function selectSize() {
     formData.append("save_method_calories", calories);
     formData.append("save_method_proteins", proteins);
     formData.append("save_method_size", selectedSize);
-    formData.append("save_collection", JSON.stringify(result.collection));
+    formData.append("save_collection", JSON.stringify(result.collection || []));
     try {
       const response = await axios.post(
         "http://hsicecream.herokuapp.com/api/placeOrder",
@@ -68,8 +68,13 @@ export default function selectSize() {
       );
 
       if (response.status === 200) {
-        console.log(response.data);
-        router.push("/generateOrder");
+        console.log(response.data.collection);
+        if (response.data.collection) {
+          dispatch(setResults(response.data));
+          router.push("/resultsPreview");
+        } else {
+          console.error("API error: missing collection");
+        }
       } else {
         console.error("API error:", response.statusText);
       }
@@ -95,68 +100,89 @@ export default function selectSize() {
           <div className="rounded-xl border border-gray-400-500 sm:h-[30vh] mt-[25px] sm:my-[10px] mb-[25px]">
             <div className="flex flex-row justify-between sm:py-[4px] p-2">
               <p className="font-medium text-sm">Calories</p>
-              {result.sum && (
+              {result && result.sum && (
                 <p className="font-medium text-sm">{result.sum}</p>
               )}
             </div>
             <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[20px] sm:pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Base</p>
-                {result.collection[0].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[0] &&
+                  result.collection[0].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Fruit</p>
-                {result.collection[1].map((ingredient, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-row w-full justify-between mb-1"
-                  >
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[1] &&
+                  result.collection[1].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between mb-1"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Dry</p>
-                {result.collection[2].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[2] &&
+                  result.collection[2].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full py-3 sm:py-1 pt-3 pb-7 sm:pb-3">
                 <p className=" font-semibold text-base sm:text-xs">Extra</p>
-                {result.collection[3].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[3] &&
+                  result.collection[3].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <button

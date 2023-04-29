@@ -54,14 +54,14 @@ export default function selectSize() {
           <div className="rounded-xl border border-gray-400-500 mt-[25px] sm:h-[30vh] sm:my-[0px] mb-[25px]">
             <div className="flex flex-row justify-between sm:py-[4px] p-2">
               <p className="font-medium text-sm">Calories</p>
-              {result.sum && (
+              {result && result.sum && (
                 <p className="font-medium text-sm">{result.sum}</p>
               )}
             </div>
             <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Base</p>
-                {result.collection[0].map((ingredient, i) => (
+                {result && result.collection && result.collection[0] && result.collection[0].map((ingredient, i) => (
                   <div key={i} className="flex flex-row w-full justify-between">
                     <p className=" font-normal text-xs">
                       {ingredient.ingredient}
@@ -75,7 +75,7 @@ export default function selectSize() {
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Fruit</p>
-                {result.collection[1].map((ingredient, i) => (
+                {result && result.collection && result.collection[1] && result.collection[1].map((ingredient, i) => (
                   <div
                     key={i}
                     className="flex flex-row w-full justify-between mb-1"
@@ -92,7 +92,7 @@ export default function selectSize() {
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Dry</p>
-                {result.collection[2].map((ingredient, i) => (
+                {result && result.collection && result.collection[2] && result.collection[2].map((ingredient, i) => (
                   <div key={i} className="flex flex-row w-full justify-between">
                     <p className=" font-normal text-xs">
                       {ingredient.ingredient}
@@ -106,7 +106,7 @@ export default function selectSize() {
 
               <div className="flex flex-col w-full pt-1 pb-7 sm:pb-3">
                 <p className=" font-semibold text-base sm:text-xs">Other</p>
-                {result.collection[3].map((ingredient, i) => (
+                {result && result.collection && result.collection[3] && result.collection[3].map((ingredient, i) => (
                   <div key={i} className="flex flex-row w-full justify-between">
                     <p className=" font-normal text-xs">
                       {ingredient.ingredient}

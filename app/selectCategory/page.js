@@ -37,10 +37,13 @@ export default function selectCategory() {
     try {
       const response = await axios.post(
         "http://hsicecream.herokuapp.com/api/selectCategory",
-        formData 
+        formData
       );
       if (response.status === 200) {
-        console.log(response.data.selected_cat_sizes, response.data.selected_cat.id)
+        console.log(
+          response.data.selected_cat_sizes,
+          response.data.selected_cat.id
+        );
         dispatch(setSizes(response.data.selected_cat_sizes));
         dispatch(setSelectedId(response.data.selected_cat.id));
         router.push("/selectSize");
@@ -66,7 +69,7 @@ export default function selectCategory() {
               Please select a category
             </p>
           </div>
-          {cat[0] && (
+          {cat && cat[0] && (
             <div
               onClick={() => handleSubmit(cat[0].id)}
               className="flex items-center cursor-pointer w-full justify-betwee relative pb-4 "
@@ -87,7 +90,7 @@ export default function selectCategory() {
               />
             </div>
           )}
-          {cat[1] && (
+          {cat && cat[1] && (
             <div
               onClick={() => handleSubmit(cat[1].id)}
               className="flex items-center cursor-pointer w-full justify-betwee relative py-5"
@@ -108,7 +111,7 @@ export default function selectCategory() {
               />
             </div>
           )}
-          {cat[2] && (
+          {cat && cat[2] && (
             <div
               onClick={() => handleSubmit(cat[2].id)}
               className="flex items-center cursor-pointer w-full justify-betwee relative py-5"
@@ -129,7 +132,7 @@ export default function selectCategory() {
               />
             </div>
           )}
-          {cat[3] && (
+          {cat && cat[3] && (
             <div
               onClick={() => handleSubmit(cat[3].id)}
               className="flex items-center cursor-pointer w-full justify-betwee relative py-5"
