@@ -60,7 +60,9 @@ export default function selectSize() {
     formData.append("save_method_calories", calories);
     formData.append("save_method_proteins", proteins);
     formData.append("save_method_size", selectedSize);
+    // formData.append("save_collection", JSON.stringify(result.collection || []));
     formData.append("save_collection", JSON.stringify(result.collection || []));
+
     try {
       const response = await axios.post(
         "https://hsicecream.herokuapp.com/api/placeOrder",
@@ -68,13 +70,8 @@ export default function selectSize() {
       );
 
       if (response.status === 200) {
-        console.log(response.data.collection);
-        if (response.data.collection) {
-          dispatch(setResults(response.data));
-          router.push("/resultsPreview");
-        } else {
-          console.error("API error: missing collection");
-        }
+        console.log(response.data);
+        router.push("/generateOrder");
       } else {
         console.error("API error:", response.statusText);
       }
@@ -187,7 +184,7 @@ export default function selectSize() {
 
               <button
                 onClick={() => handleSubmit()}
-                className="bg-white hover:bg-[#5e53b5] rounded-full sm:w-1/2 h-[45px] sm:h-[30px] text-[#7264E4] font-medium text-base"
+                className="bg-white rounded-full sm:w-1/2 h-[45px] sm:h-[30px] text-[#7264E4] font-medium text-base"
               >
                 Shuffle
               </button>
@@ -205,7 +202,7 @@ export default function selectSize() {
           </Link>
           <div
             onClick={() => handleSubmit1()}
-            className="bg-white hover:bg-[#5e53b5] hover:text-white w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
+            className="bg-white w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
           >
             <p className="font-mediums text-lg sm:text-sm">Generate</p>
             <ChevronRightIcon className="h-7 w-7 sm:h-6 pt-1 pl-1" />

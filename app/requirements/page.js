@@ -6,7 +6,11 @@ import { usePathname } from "next/navigation";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setGlobelCalories, setCatArr, setGlobelProtine } from "../Redux/slices/category";
+import {
+  setGlobelCalories,
+  setCatArr,
+  setGlobelProtine,
+} from "../Redux/slices/category";
 import { useRouter } from "next/navigation";
 
 export default function Requirments() {
@@ -126,7 +130,7 @@ export default function Requirments() {
           </Link>
 
           <button
-            className="bg-white hover:bg-[#5e53b5] hover:text-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
+            className="bg-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
             onClick={handleSubmit}
           >
             <p className="font-mediums text-lg">Continue</p>
