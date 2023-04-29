@@ -75,7 +75,7 @@ export default function selectSize() {
               Select Size
             </h2>
             <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
-              Please select a category
+              Please select a size
             </p>
           </div>
           {newSizeArr.length != 0 &&
