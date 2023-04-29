@@ -36,7 +36,7 @@ export default function selectSize() {
 
     try {
       const response = await axios.post(
-        "http://hsicecream.herokuapp.com/api/shuffle",
+        "https://hsicecream.herokuapp.com/api/shuffle",
         formData
       );
 
@@ -63,7 +63,7 @@ export default function selectSize() {
     formData.append("save_collection", JSON.stringify(result.collection || []));
     try {
       const response = await axios.post(
-        "http://hsicecream.herokuapp.com/api/placeOrder",
+        "https://hsicecream.herokuapp.com/api/placeOrder",
         formData
       );
 

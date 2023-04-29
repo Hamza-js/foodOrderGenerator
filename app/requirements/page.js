@@ -26,7 +26,7 @@ export default function Requirments() {
 
       try {
         const response = await axios.post(
-          "http://hsicecream.herokuapp.com/api/requirements",
+          "https://hsicecream.herokuapp.com/api/requirements",
           formData
         );
         if (response.status === 200) {

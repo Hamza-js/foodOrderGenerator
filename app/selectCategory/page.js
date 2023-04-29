@@ -36,7 +36,7 @@ export default function selectCategory() {
 
     try {
       const response = await axios.post(
-        "http://hsicecream.herokuapp.com/api/selectCategory",
+        "https://hsicecream.herokuapp.com/api/selectCategory",
         formData
       );
       if (response.status === 200) {

@@ -48,7 +48,7 @@ export default function selectSize() {
 
     try {
       const response = await axios.post(
-        "http://hsicecream.herokuapp.com/api/selectSize",
+        "https://hsicecream.herokuapp.com/api/selectSize",
         formData
       );
 
