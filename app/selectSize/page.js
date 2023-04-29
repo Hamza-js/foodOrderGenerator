@@ -12,6 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Loading from "@<components>/components/loading";
 
 export default function selectSize() {
   const [newSizeArr, setNewSizeArr] = useState([]);
@@ -21,6 +22,8 @@ export default function selectSize() {
   const id = useSelector(selectId);
   const calories = useSelector(selectCalories);
   const proteins = useSelector(selectProtines);
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -47,6 +50,8 @@ export default function selectSize() {
     formData.append("selected_size", size);
 
     try {
+      setLoading(true);
+
       const response = await axios.post(
         "https://hsicecream.herokuapp.com/api/selectSize",
         formData
@@ -60,40 +65,47 @@ export default function selectSize() {
       } else {
         console.error("API error:", response.statusText);
       }
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
+
       console.error(error);
       alert("Server Error");
     }
   }
   return (
-    <div className="mainHeight">
-      <div className="innerContainerWhite flex flex-col">
-        <Header url={pathname} />
-        <div className="px-5 mt-[75px] sm:mt-[55px]">
-          <div className="flex items-center justify-center flex-col text-center">
-            <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
-              Select Size
-            </h2>
-            <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
-              Please select a size
-            </p>
-          </div>
-          {newSizeArr.length != 0 &&
-            newSizeArr.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  onClick={() => handleSubmit(item.value)}
-                  className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5 cursor-pointer"
-                >
-                  <p className="font-medium text-xl text-[#596070]">
-                    {item.key}
-                  </p>
-                </div>
-              );
-            })}
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="mainHeight">
+          <div className="innerContainerWhite flex flex-col">
+            <Header url={pathname} />
+            <div className="px-5 mt-[75px] sm:mt-[55px]">
+              <div className="flex items-center justify-center flex-col text-center">
+                <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
+                  Select Size
+                </h2>
+                <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
+                  Please select a size
+                </p>
+              </div>
+              {newSizeArr.length != 0 &&
+                newSizeArr.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => handleSubmit(item.value)}
+                      className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5 cursor-pointer"
+                    >
+                      <p className="font-medium text-xl text-[#596070]">
+                        {item.key}
+                      </p>
+                    </div>
+                  );
+                })}
 
-          {/* <div
+              {/* <div
             onClick={() => handleSubmit()}
             className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5"
           >
@@ -106,8 +118,10 @@ export default function selectSize() {
           >
             <p className=" font-medium text-xl text-[#596070]">16oz</p>
           </div> */}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

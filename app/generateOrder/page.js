@@ -61,61 +61,82 @@ export default function selectSize() {
             <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Base</p>
-                {result && result.collection && result.collection[0] && result.collection[0].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[0] &&
+                  result.collection[0].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Fruit</p>
-                {result && result.collection && result.collection[1] && result.collection[1].map((ingredient, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-row w-full justify-between mb-1"
-                  >
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[1] &&
+                  result.collection[1].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between mb-1"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Dry</p>
-                {result && result.collection && result.collection[2] && result.collection[2].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[2] &&
+                  result.collection[2].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col w-full pt-1 pb-7 sm:pb-3">
                 <p className=" font-semibold text-base sm:text-xs">Other</p>
-                {result && result.collection && result.collection[3] && result.collection[3].map((ingredient, i) => (
-                  <div key={i} className="flex flex-row w-full justify-between">
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient}
-                    </p>
-                    <p className=" font-normal text-xs">
-                      {ingredient.ingredient_cal}
-                    </p>
-                  </div>
-                ))}
+                {result &&
+                  result.collection &&
+                  result.collection[3] &&
+                  result.collection[3].map((ingredient, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-row w-full justify-between"
+                    >
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient}
+                      </p>
+                      <p className=" font-normal text-xs">
+                        {ingredient.ingredient_cal}
+                      </p>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -124,7 +145,7 @@ export default function selectSize() {
         <div className="absolute bottom-0 w-full flex items-center justify-center sm:max-h-[9vh] h-[120px] bg-[#7264E4] sm:rounded-t-[15px] rounded-t-[25px] z-[1]">
           <div
             onClick={() => handlSubmit()}
-            className="bg-white hover:bg-[#5e53b5] hover:text-white w-[320px] sm:w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
+            className="bg-white w-[320px] sm:w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
           >
             <ChevronLeftIcon className="h-7 w-7 sm:h-6 pt-1 pl-1" />
             <p className="font-mediums text-lg sm:text-sm">
