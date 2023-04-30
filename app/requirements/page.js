@@ -42,7 +42,7 @@ export default function Requirments() {
           dispatch(setGlobelProtine(proteins));
           router.push("/selectCategory");
 
-          setLoading(false);
+          // setLoading(false);
         } else {
           console.error("API error:", response.statusText);
         }
@@ -71,12 +71,12 @@ export default function Requirments() {
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="mainHeight">
-          <div className="innerContainerWhite flex flex-col justify-between">
-            <Header url={pathname} />
+      <div className="mainHeight">
+        <div className="innerContainerWhite flex flex-col justify-between">
+          <Header url={pathname} />
+          {loading ? (
+            <Loading />
+          ) : (
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
                 <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
@@ -131,25 +131,25 @@ export default function Requirments() {
                 )}
               </div>
             </div>
-            <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#7264E4] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
-              <Link href={"/"}>
-                <div className="bg-[#7264E4] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
-                  <ChevronLeftIcon className="h-7 w-7 pt-[3px] pr-1 text-white" />
-                  <p className="font-mediums text-lg text-white">Previous</p>
-                </div>
-              </Link>
+          )}
+          <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#7264E4] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
+            <Link href={"/"}>
+              <div className="bg-[#7264E4] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
+                <ChevronLeftIcon className="h-7 w-7 pt-[3px] pr-1 text-white" />
+                <p className="font-mediums text-lg text-white">Previous</p>
+              </div>
+            </Link>
 
-              <button
-                className="bg-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
-                onClick={handleSubmit}
-              >
-                <p className="font-mediums text-lg">Continue</p>
-                <ChevronRightIcon className="h-7 w-7 pt-1 pl-1" />
-              </button>
-            </div>
+            <button
+              className="bg-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
+              onClick={handleSubmit}
+            >
+              <p className="font-mediums text-lg">Continue</p>
+              <ChevronRightIcon className="h-7 w-7 pt-1 pl-1" />
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

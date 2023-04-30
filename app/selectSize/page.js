@@ -41,13 +41,13 @@ export default function selectSize() {
   // console.log(size, id);
   // console.log(calories, proteins);
 
-  async function handleSubmit(size) {
-    console.log(size, id, proteins, calories);
+  async function handleSubmit(size1) {
+    console.log(size1, id, proteins, calories);
     const formData = new FormData();
     formData.append("selected_cat_id", id);
     formData.append("calories", calories);
     formData.append("proteins", proteins);
-    formData.append("selected_size", size);
+    formData.append("selected_size", size1);
 
     try {
       setLoading(true);
@@ -65,7 +65,7 @@ export default function selectSize() {
       } else {
         console.error("API error:", response.statusText);
       }
-      setLoading(false);
+      // setLoading(false);
     } catch (error) {
       setLoading(false);
 
@@ -75,12 +75,12 @@ export default function selectSize() {
   }
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="mainHeight">
-          <div className="innerContainerWhite flex flex-col">
-            <Header url={pathname} />
+      <div className="mainHeight">
+        <div className="innerContainerWhite flex flex-col">
+          <Header url={pathname} />
+          {loading ? (
+            <Loading />
+          ) : (
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
                 <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
@@ -119,9 +119,9 @@ export default function selectSize() {
             <p className=" font-medium text-xl text-[#596070]">16oz</p>
           </div> */}
             </div>
-          </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 }

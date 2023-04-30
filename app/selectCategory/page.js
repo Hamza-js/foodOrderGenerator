@@ -56,7 +56,7 @@ export default function selectCategory() {
       } else {
         console.error("API error:", response.statusText);
       }
-      setLoading(false);
+      // setLoading(false);
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -67,12 +67,12 @@ export default function selectCategory() {
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="mainHeight">
-          <div className="innerContainerWhite  flex flex-col">
-            <Header url={pathname} />
+      <div className="mainHeight">
+        <div className="innerContainerWhite  flex flex-col">
+          <Header url={pathname} />
+          {loading ? (
+            <Loading />
+          ) : (
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
                 <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4 ">
@@ -168,9 +168,9 @@ export default function selectCategory() {
                 </div>
               )}
             </div>
-          </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 }
