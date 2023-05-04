@@ -23,10 +23,13 @@ export default function selectSize() {
   const calories = useSelector(selectCalories);
   const proteins = useSelector(selectProtines);
   const [loading, setLoading] = useState(false);
-
+  const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
-
+  function handleClosePopup() {
+    console.log("Close button clicked");
+    setShowPopup(false);
+  }
   useEffect(() => {
     const selectedCatSizes = size[0];
     const sizesArray = [];
@@ -63,14 +66,14 @@ export default function selectSize() {
         dispatch(setSelectedSize(size));
         router.push("/resultsPreview");
       } else {
+        setShowPopup(true);
         console.error("API error:", response.statusText);
       }
       // setLoading(false);
     } catch (error) {
       setLoading(false);
-
+      setShowPopup(true);
       console.error(error);
-      alert("Server Error");
     }
   }
   return (
@@ -104,6 +107,23 @@ export default function selectSize() {
                     </div>
                   );
                 })}
+              {showPopup && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                  <div className="bg-gray-900 opacity-50 pointer-events-none"></div>
+                  <div className="bg-white p-8 rounded-md">
+                    <p className="text-lg z-1000 font-bold mb-4">
+                      Something went wrnog
+                    </p>
+                    <p>Please try again...</p>
+                    <button
+                      className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={handleClosePopup}
+                    >
+                      Ok
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* <div
             onClick={() => handleSubmit()}

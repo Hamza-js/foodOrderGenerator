@@ -18,17 +18,24 @@ export default function Requirments() {
   const pathname = usePathname();
   const [calories, setCalories] = useState("");
   const [proteins, setProteins] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
 
   const [error, setError] = useState("");
-
+  function handleClosePopup() {
+    console.log("Close button clicked");
+    setShowPopup(false);
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     if (!calories && !proteins) {
-      setError("Please fill out at least one fields.");
-    } else if (!/^\d+$/.test(calories) && !/^\d+$/.test(proteins)) {
+      setError("Please fill out at least one field.");
+    } else if (
+      (calories !== "" && !/^\d+$/.test(calories)) ||
+      (proteins !== "" && !/^\d+$/.test(proteins))
+    ) {
       setError("Please enter only numbers for input values.");
     } else {
       console.log(calories, proteins);
@@ -49,9 +56,11 @@ export default function Requirments() {
           dispatch(setGlobelProtine(proteins));
           router.push("/selectCategory");
         } else {
+          setShowPopup(true);
           console.error("API error:", response.statusText);
         }
       } catch {
+        setShowPopup(true);
         setLoading(false);
       }
     }
@@ -115,6 +124,25 @@ export default function Requirments() {
               </div>
             </div>
           )}
+
+          {showPopup && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
+              <div className="bg-gray-900 opacity-50 pointer-events-none"></div>
+              <div className="bg-white p-8 rounded-md">
+                <p className="text-lg z-1000 font-bold mb-4">
+                  Something went wrnog
+                </p>
+                <p>Please try again...</p>
+                <button
+                  className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={handleClosePopup}
+                >
+                  Ok
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#7264E4] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
             <Link href={"/"}>
               <div className="bg-[#7264E4] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
