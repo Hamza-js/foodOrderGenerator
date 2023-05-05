@@ -58,6 +58,12 @@ export default function selectSize() {
                 <p className="font-medium text-sm">{result.sum}</p>
               )}
             </div>
+            <div className="flex flex-row justify-between sm:py-[4px] p-2">
+              <p className="font-medium text-sm">Proteins</p>
+              {result && result.sum && (
+                <p className="font-medium text-sm">{result.sum_proteins}</p>
+              )}
+            </div>
             <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
               <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
                 <p className=" font-semibold text-base sm:text-xs">Base</p>
