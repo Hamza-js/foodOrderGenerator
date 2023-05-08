@@ -56,14 +56,14 @@ export default function selectSize() {
       setLoading(true);
 
       const response = await axios.post(
-        "https://hsicecream.herokuapp.com/api/selectSize",
+        "https://hsicecream.herokuapp.com/api/selectSiz",
         formData
       );
 
       if (response.status === 200) {
         console.log(response.data.collection);
         dispatch(setResults(response.data));
-        dispatch(setSelectedSize(size));
+        dispatch(setSelectedSize(size1));
         router.push("/resultsPreview");
       } else {
         setShowPopup(true);
@@ -108,13 +108,14 @@ export default function selectSize() {
                   );
                 })}
               {showPopup && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center">
+                <div className="fixed  inset-0 z-50 flex items-center justify-center">
                   <div className="bg-gray-900 opacity-50 pointer-events-none"></div>
-                  <div className="bg-white p-8 rounded-md">
-                    <p className="text-lg z-1000 font-bold mb-4">
-                      Something went wrnog
+                  <div className="bg-white max-w-[300px] p-8 rounded-md">
+                    <p className="text-lg z-1000 font-bold mb-4">Oops!</p>
+                    <p>
+                      No Combination Found! Please select a different category
+                      or make it higher or lower calorie and protein
                     </p>
-                    <p>Please try again...</p>
                     <button
                       className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                       onClick={handleClosePopup}

@@ -63,6 +63,7 @@ export default function selectSize() {
   }
 
   async function handleSubmit1() {
+    console.log(selectedSize)
     const formData = new FormData();
     formData.append("save_method_cat_id", id);
     formData.append("save_method_calories", calories);

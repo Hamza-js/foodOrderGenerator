@@ -130,7 +130,7 @@ export default function Requirments() {
               <div className="bg-gray-900 opacity-50 pointer-events-none"></div>
               <div className="bg-white p-8 rounded-md">
                 <p className="text-lg z-1000 font-bold mb-4">
-                  Something went wrnog
+                  Something went wrong
                 </p>
                 <p>Please try again...</p>
                 <button
