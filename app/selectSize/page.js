@@ -28,6 +28,7 @@ export default function selectSize() {
   const dispatch = useDispatch();
   function handleClosePopup() {
     console.log("Close button clicked");
+    router.replace("./requirements")
     setShowPopup(false);
   }
   useEffect(() => {
@@ -64,7 +65,7 @@ export default function selectSize() {
         console.log(response.data.collection);
         dispatch(setResults(response.data));
         dispatch(setSelectedSize(size1));
-        router.push("/resultsPreview");
+        router.replace("/resultsPreview");
       } else {
         setShowPopup(true);
         console.error("API error:", response.statusText);

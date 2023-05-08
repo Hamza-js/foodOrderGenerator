@@ -49,7 +49,7 @@ export default function selectSize() {
         console.log(response.data.collection);
         // setCollection(response.data.collection)
         dispatch(setResults(response.data));
-        router.push("/resultsPreview");
+        // router.push("/resultsPreview");
       } else {
         console.error("API error:", response.statusText);
       }
@@ -82,7 +82,7 @@ export default function selectSize() {
 
       if (response.status === 200) {
         console.log(response.data);
-        router.push("/generateOrder");
+        router.replace("/generateOrder");
       } else {
         console.error("API error:", response.statusText);
       }

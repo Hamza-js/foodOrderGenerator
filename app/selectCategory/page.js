@@ -52,7 +52,7 @@ export default function selectCategory() {
         );
         dispatch(setSizes(response.data.selected_cat_sizes));
         dispatch(setSelectedId(response.data.selected_cat.id));
-        router.push("/selectSize");
+        router.replace("/selectSize");
       } else {
         console.error("API error:", response.statusText);
       }

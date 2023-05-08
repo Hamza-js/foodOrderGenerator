@@ -23,7 +23,7 @@ export default function selectSize() {
   const proteins = useSelector(selectProtines);
   const router = useRouter();
   const handlSubmit = () => {
-    router.push("./requirements");
+    router.replace("./requirements");
   };
   return (
     <div className="mainHeight">
@@ -39,7 +39,7 @@ export default function selectSize() {
             </p>
           </div>
           <QRCode
-            value="Walnut, Ce, Apple, Orange, Milk"
+            value={`Protiens:${proteins}  Calories:${calories}`}
             // size={256}
             style={{
               //   // height: 168,
