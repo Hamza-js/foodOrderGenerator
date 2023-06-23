@@ -25,13 +25,16 @@ export default function Home() {
           width={420}
         />
         {/* bg image suppose to be here */}
-        <Image
-          className="absolute left-[55px] top-10"
-          src={logo}
-          alt="logo"
-          height={272}
-          width={279}
-        />
+        <div className="flex justify-center w-full">
+          <Image
+            className="absolute mt-10"
+            src={logo}
+            alt="logo"
+            height={272}
+            width={279}
+          />
+        </div>
+
         <span></span>
         <div className=" w-full h-[120px] bg-white rounded-t-[25px] z-[1] mt-12">
           <div
