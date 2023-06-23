@@ -134,7 +134,7 @@ export default function Requirments() {
                 </p>
                 <p>Please try again...</p>
                 <button
-                  className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="mt-4 bg-[#AF9186] text-white font-bold py-2 px-4 rounded"
                   onClick={handleClosePopup}
                 >
                   Ok
