@@ -174,7 +174,7 @@ export default function selectSize() {
           </div>
         </div>
 
-        <div className=" sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#AF9186] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between items-center">
+        <div className=" sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#AF9186] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex justify-center items-center">
           <div
             onClick={() => handlSubmit()}
             className="bg-white w-[320px] sm:w-[178px] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"

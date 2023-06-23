@@ -8,8 +8,6 @@ import homeIcon from "../images/Home/homeIcon.png";
 import logo from "../images/Home/logo.png";
 import {
   ChevronRightIcon,
-  ChevronLeftIcon,
-  HomeIcon,
 } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 
