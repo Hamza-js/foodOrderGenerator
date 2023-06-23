@@ -3,15 +3,26 @@ import Link from "next/link";
 import Image from "next/image";
 import BD from "../images/Home/BG.png";
 import BG from "../images/Home/bgpic.png";
+import homeIcon from "../images/Home/homeIcon.png";
 
 import logo from "../images/Home/logo.png";
-import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronRightIcon,
+  ChevronLeftIcon,
+  HomeIcon,
+} from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
   return (
     <div className="mainHeight">
+      <Image
+        alt="Home Icon"
+        src={homeIcon}
+        className="absolute top-6 right-4 cursor-pointer z-[1000]"
+      />
+
       <div className="innerContainerHome flex justify-between flex-col relative">
         <Image
           className="absolute w-full h-full max-w-[420px] sm:max-h-[90vh] sm:max-w-[390px]"

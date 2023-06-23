@@ -124,99 +124,125 @@ export default function selectSize() {
                     <p className="font-medium text-sm">{result.sum_proteins}</p>
                   )}
                 </div>
-                <div className="flex flex-col rounded-xl bg-[#7264E4] text-white justify-between sm:items-center pb-[20px] sm:pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
-                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
-                    <p className=" font-semibold text-base sm:text-xs">Base</p>
+                <div className="flex flex-col rounded-xl bg-[#AF9186] text-white justify-between sm:items-center pb-[20px] sm:pb-[10px] mt-[8px] sm:mt-[6px] px-3 w-full">
+                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-white border-opacity-22">
+                    <p className=" font-bold text-base sm:text-xs">Base</p>
                     {result &&
                       result.collection &&
                       result.collection[0] &&
                       result.collection[0].map((ingredient, i) => (
-                        <div
-                          key={i}
-                          className="flex flex-row w-full justify-between"
-                        >
-                          <p className=" font-normal text-xs">
+                        <div key={i}>
+                          <p className=" font-semibold text-sm">
                             {ingredient.ingredient}
                           </p>
-                          <p className=" font-normal text-xs">
-                            {ingredient.ingredient_cal}
-                          </p>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Calories</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_cal} Cal`}
+                            </p>
+                          </div>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Proteins</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_protein} g`}
+                            </p>
+                          </div>
                         </div>
                       ))}
                   </div>
 
-                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
-                    <p className=" font-semibold text-base sm:text-xs">Fruit</p>
+                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-white border-opacity-22">
+                    <p className=" font-bold text-base sm:text-xs">Fruit</p>
                     {result &&
                       result.collection &&
                       result.collection[1] &&
                       result.collection[1].map((ingredient, i) => (
-                        <div
-                          key={i}
-                          className="flex flex-row w-full justify-between mb-1"
-                        >
-                          <p className=" font-normal text-xs">
-                            {parseFloat(ingredient.ingredient_cal).toFixed(2)}
+                        <div key={i}>
+                          <p className=" font-semibold text-sm">
+                            {ingredient.ingredient}
                           </p>
-                          <p className=" font-normal text-xs">
-                            {ingredient.ingredient_cal}
-                          </p>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Calories</p>
+                            <p className=" font-normal text-xs">
+                              {`${parseFloat(ingredient.ingredient_cal).toFixed(
+                                2
+                              )} Cal`}
+                            </p>
+                          </div>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Proteins</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_protein} g`}
+                            </p>
+                          </div>
                         </div>
                       ))}
                   </div>
 
-                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-[#9186EA] border-opacity-22">
-                    <p className=" font-semibold text-base sm:text-xs">Dry</p>
+                  <div className="flex flex-col w-full py-3 sm:py-1 border-b-2 border-solid border-white border-opacity-22">
+                    <p className=" font-bold text-base sm:text-xs">Dry</p>
                     {result &&
                       result.collection &&
                       result.collection[2] &&
                       result.collection[2].map((ingredient, i) => (
-                        <div
-                          key={i}
-                          className="flex flex-row w-full justify-between"
-                        >
-                          <p className=" font-normal text-xs">
+                        <div key={i}>
+                          <p className=" font-semibold text-sm">
                             {ingredient.ingredient}
                           </p>
-                          <p className=" font-normal text-xs">
-                            {ingredient.ingredient_cal}
-                          </p>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Calories</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_cal} Cal`}
+                            </p>
+                          </div>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Proteins</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_protein} g`}
+                            </p>
+                          </div>
                         </div>
                       ))}
                   </div>
 
                   <div className="flex flex-col w-full py-3 sm:py-1 pt-3 pb-7 sm:pb-3">
-                    <p className=" font-semibold text-base sm:text-xs">Extra</p>
+                    <p className=" font-bold text-base sm:text-xs">Other</p>
                     {result &&
                       result.collection &&
                       result.collection[3] &&
                       result.collection[3].map((ingredient, i) => (
-                        <div
-                          key={i}
-                          className="flex flex-row w-full justify-between"
-                        >
-                          <p className=" font-normal text-xs">
+                        <div key={i}>
+                          <p className=" font-semibold text-sm">
                             {ingredient.ingredient}
                           </p>
-                          <p className=" font-normal text-xs">
-                            {ingredient.ingredient_cal}
-                          </p>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Calories</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_cal} Cal`}
+                            </p>
+                          </div>
+                          <div className="flex flex-row w-full justify-between">
+                            <p className=" font-normal text-xs">Proteins</p>
+                            <p className=" font-normal text-xs">
+                              {`${ingredient.ingredient_protein} g`}
+                            </p>
+                          </div>
                         </div>
                       ))}
                   </div>
 
                   <button
                     onClick={() => handleSubmit()}
-                    className="bg-white rounded-full sm:w-1/2 h-[45px] sm:h-[30px] text-[#7264E4] font-medium text-base"
+                    className="bg-white rounded-full sm:w-1/2 h-[45px] sm:h-[30px] text-black font-medium text-base"
                   >
                     Shuffle
                   </button>
                 </div>
               </div>
             </div>
-            <div className=" sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#7264E4] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between items-center">
+            <div className=" sm:absolute sm:bottom-0 w-full sm:max-h-[9vh] h-[120px] bg-[#AF9186] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between items-center">
               <Link href={"/selectSize"}>
-                <div className="bg-[#7264E4] mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] cursor-pointer">
+                <div className="bg-[#AF9186]  mx-[18px] my-[30px] sm:my-[13px] py-[11px] sm:py-[3px] flex justify-center items-center rounded-[18px] cursor-pointer">
                   <ChevronLeftIcon className="h-7 sm:h-6 w-7 pt-[3px] pr-1 text-white" />
                   <p className="font-mediums text-lg sm:text-sm text-white">
                     Previous
