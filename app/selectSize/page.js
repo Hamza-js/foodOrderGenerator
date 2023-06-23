@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "@<components>/components/loading";
+import Link from "next/link";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 export default function selectSize() {
   const [newSizeArr, setNewSizeArr] = useState([]);
@@ -24,11 +26,14 @@ export default function selectSize() {
   const proteins = useSelector(selectProtines);
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
+
   const dispatch = useDispatch();
   function handleClosePopup() {
     console.log("Close button clicked");
-    router.replace("./requirements")
+    router.replace("./requirements");
     setShowPopup(false);
   }
   useEffect(() => {
@@ -46,6 +51,7 @@ export default function selectSize() {
   // console.log(calories, proteins);
 
   async function handleSubmit(size1) {
+    setClicked(true);
     console.log(size1, id, proteins, calories);
     const formData = new FormData();
     formData.append("selected_cat_id", id);
@@ -77,10 +83,18 @@ export default function selectSize() {
       console.error(error);
     }
   }
+
+  const handleNEXT = () => {
+    if (clicked) {
+      router.replace("./requirements");
+    } else {
+      setError("Please select a size first.");
+    }
+  };
   return (
     <>
       <div className="mainHeight">
-        <div className="innerContainerWhite flex flex-col">
+        <div className="innerContainerWhite flex flex-col justify-between">
           <Header url={pathname} />
           {loading ? (
             <Loading />
@@ -94,13 +108,19 @@ export default function selectSize() {
                   Please select a size
                 </p>
               </div>
+              {error && (
+                <div className="text-red-500 w-full flex justify-center">
+                  <p>{error}</p>
+                </div>
+              )}
+
               {newSizeArr.length != 0 &&
                 newSizeArr.map((item, index) => {
                   return (
                     <div
                       key={index}
                       onClick={() => handleSubmit(item.value)}
-                      className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5 cursor-pointer"
+                      className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 flex items-center mb-5 cursor-pointer"
                     >
                       <p className="font-medium text-xl text-[#596070]">
                         {item.key}
@@ -126,22 +146,25 @@ export default function selectSize() {
                   </div>
                 </div>
               )}
-
-              {/* <div
-            onClick={() => handleSubmit()}
-            className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5"
-          >
-            <p className=" font-medium text-xl text-[#596070]">12oz</p>
-          </div>
-
-          <div
-            onClick={() => handleSubmit()}
-            className="min-h-[74px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F7F6FB] pl-4 flex items-center mb-5"
-          >
-            <p className=" font-medium text-xl text-[#596070]">16oz</p>
-          </div> */}
             </div>
           )}
+
+          <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#AF9186] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
+            <Link href={"/selectCategory"}>
+              <div className="bg-[#AF9186] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
+                <ChevronLeftIcon className="h-7 w-7 pt-[3px] pr-1 text-white" />
+                <p className="font-mediums text-lg text-white">Previous</p>
+              </div>
+            </Link>
+
+            <button
+              className="bg-white w-[178px] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] text-black cursor-pointer"
+              onClick={handleNEXT}
+            >
+              <p className="font-mediums text-lg">Continue</p>
+              <ChevronRightIcon className="h-7 w-7 pt-1 pl-1" />
+            </button>
+          </div>
         </div>
       </div>
     </>

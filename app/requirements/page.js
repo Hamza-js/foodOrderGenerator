@@ -94,7 +94,7 @@ export default function Requirments() {
                   Calories
                 </p>
                 <input
-                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F4F2FF] pl-4 outline-none text-[#9E9E9E] `}
+                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E] `}
                   placeholder="Enter Calories"
                   value={calories}
                   onChange={(e) => {
@@ -113,7 +113,7 @@ export default function Requirments() {
                   Protien
                 </p>
                 <input
-                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#F4F2FF] pl-4 outline-none text-[#9E9E9E]`}
+                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E]`}
                   placeholder="Enter Protein"
                   value={proteins}
                   onChange={(e) => {
@@ -143,9 +143,9 @@ export default function Requirments() {
             </div>
           )}
 
-          <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#7264E4] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
+          <div className="w-full sm:max-h-[15vh] h-[120px] bg-[#AF9186] rounded-t-[25px] sm:rounded-t-[15px] z-[1] flex flex-row justify-between">
             <Link href={"/"}>
-              <div className="bg-[#7264E4] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
+              <div className="bg-[#AF9186] mx-[18px] my-[30px] py-[11px] sm:py-[7px] flex justify-center items-center rounded-[18px] cursor-pointer">
                 <ChevronLeftIcon className="h-7 w-7 pt-[3px] pr-1 text-white" />
                 <p className="font-mediums text-lg text-white">Previous</p>
               </div>

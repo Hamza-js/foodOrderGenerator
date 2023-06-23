@@ -63,7 +63,7 @@ export default function selectSize() {
   }
 
   async function handleSubmit1() {
-    console.log(selectedSize)
+    console.log(selectedSize);
     const formData = new FormData();
     formData.append("save_method_cat_id", id);
     formData.append("save_method_calories", calories);
@@ -156,7 +156,7 @@ export default function selectSize() {
                           className="flex flex-row w-full justify-between mb-1"
                         >
                           <p className=" font-normal text-xs">
-                            {ingredient.ingredient}
+                            {parseFloat(ingredient.ingredient_cal).toFixed(2)}
                           </p>
                           <p className=" font-normal text-xs">
                             {ingredient.ingredient_cal}
