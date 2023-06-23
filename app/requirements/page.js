@@ -114,7 +114,7 @@ export default function Requirments() {
                 </p>
                 <input
                   className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E]`}
-                  placeholder="Enter Protein"
+                  placeholder="Enter Proteins"
                   value={proteins}
                   onChange={(e) => {
                     setProteins(e.target.value);
