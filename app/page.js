@@ -26,7 +26,7 @@ export default function Home() {
         />
         {/* bg image suppose to be here */}
         <Image
-          className="absolute left-[50px] top-10"
+          className="absolute left-[55px] top-10"
           src={logo}
           alt="logo"
           height={272}
