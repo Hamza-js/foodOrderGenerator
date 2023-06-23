@@ -110,7 +110,7 @@ export default function Requirments() {
               </div>
               <div>
                 <p className="text-black font-medium text-lg mt-[20px] mb-[10px]">
-                  Protien
+                  Proteins
                 </p>
                 <input
                   className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E]`}
