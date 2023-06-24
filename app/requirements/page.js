@@ -24,6 +24,9 @@ export default function Requirments() {
   const dispatch = useDispatch();
 
   const [error, setError] = useState("");
+  const [calRangeError, setCalRangeError] = useState(false);
+  const [proRangeError, setProRangeError] = useState(false);
+
   function handleClosePopup() {
     console.log("Close button clicked");
     setShowPopup(false);
@@ -37,8 +40,13 @@ export default function Requirments() {
       (proteins !== "" && !/^\d+$/.test(proteins))
     ) {
       setError("Please enter only numbers for input values.");
+    } else if (calories !== "" && (calories < 50 || calories > 500)) {
+      setCalRangeError(true);
+    } else if (proteins !== "" && (proteins < 3 || proteins > 45)) {
+      setProRangeError(true);
     } else {
-      console.log(calories, proteins);
+      // console.log(calories, proteins);
+      console.log("api called successfully");
       const formData = new FormData();
       formData.append("calories", calories);
       formData.append("proteins", proteins);
@@ -76,8 +84,7 @@ export default function Requirments() {
           ) : (
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
-                <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
-                  {/* <h1>Current URL: {pathname}</h1> */}
+                <h2 className="text-black font-semibold sm:text-2xl text-3xl font-sans pb-4">
                   Input Requirements
                 </h2>
                 <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
@@ -102,11 +109,13 @@ export default function Requirments() {
                     // setCaloriesValid(true);
                   }}
                 />
-                {/* {!caloriesValid && (
-                  <p className="text-red-500 text-sm">
-                    Either enter Calories required or Proteins Required or BOTH
-                  </p>
-                )} */}
+                <p
+                  className={`${
+                    calRangeError ? "text-red-600" : "text-[#AF9186]"
+                  } text-sm`}
+                >
+                  The range should be between 50cal to 500cal
+                </p>
               </div>
               <div>
                 <p className="text-black font-medium text-lg mt-[20px] mb-[10px]">
@@ -121,6 +130,13 @@ export default function Requirments() {
                     // setProteinsValid(true);
                   }}
                 />
+                <p
+                  className={`${
+                    proRangeError ? "text-red-600" : "text-[#AF9186]"
+                  } text-sm`}
+                >
+                  The range should be between 3g to 45g of protein
+                </p>
               </div>
             </div>
           )}

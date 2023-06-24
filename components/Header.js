@@ -12,28 +12,28 @@ const header = (url) => {
       <div className="flex gap-3 h-full items-end justify-between">
         <div
           className={`${
-            pageUrl === "/requirements" ? "bg-[#AF9186]" : "bg-gray-300"
+            pageUrl === "/requirements" ? "bg-[#AF9186]" : "bg-[#EFDDD7]"
           } h-[3px] w-full rounded-full`}
         ></div>
         {/* <p>{url.url}</p> */}
         <div
           className={`${
-            pageUrl === "/selectCategory" ? "bg-[#AF9186]" : "bg-gray-300"
+            pageUrl === "/selectCategory" ? "bg-[#AF9186]" : "bg-[#EFDDD7]"
           } h-[3px] w-full rounded-full`}
         ></div>
         <div
           className={`${
-            pageUrl === "/selectSize" ? "bg-[#AF9186]" : "bg-gray-300"
+            pageUrl === "/selectSize" ? "bg-[#AF9186]" : "bg-[#EFDDD7]"
           } h-[3px] w-full rounded-full`}
         ></div>{" "}
         <div
           className={`${
-            url.url === "/resultsPreview" ? "bg-[#AF9186]" : "bg-gray-300"
+            url.url === "/resultsPreview" ? "bg-[#AF9186]" : "bg-[#EFDDD7]"
           } h-[3px] w-full rounded-full`}
         ></div>
         <div
           className={`${
-            url.url === "/generateOrder" ? "bg-[#AF9186]" : "bg-gray-300"
+            url.url === "/generateOrder" ? "bg-[#AF9186]" : "bg-[#EFDDD7]"
           } h-[3px] w-full rounded-full`}
         ></div>
       </div>

@@ -103,7 +103,7 @@ export default function selectSize() {
             <Header url={pathname} />
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
-                <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4 sm:pb-1">
+              <h2 className="text-black font-semibold sm:text-2xl text-3xl font-sans pb-4">
                   Result
                 </h2>
                 <p className="text-[#60656E] text-sm sm:text-xs font-medium w-[275px] h-[54px] sm:h-auto">

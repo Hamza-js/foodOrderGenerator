@@ -101,7 +101,7 @@ export default function selectSize() {
           ) : (
             <div className="px-5 mt-[75px] sm:mt-[55px]">
               <div className="flex items-center justify-center flex-col text-center">
-                <h2 className="text-black font-semibold sm:text-lg text-2xl font-sans pb-4">
+              <h2 className="text-black font-semibold sm:text-2xl text-3xl font-sans pb-4">
                   Select Size
                 </h2>
                 <p className="text-[#60656E] text-sm font-medium w-[275px] h-[54px]">
@@ -109,7 +109,7 @@ export default function selectSize() {
                 </p>
               </div>
               {error && (
-                <div className="text-red-500 w-full flex justify-center">
+                <div className="text-red-500 w-full pb-2 flex justify-center">
                   <p>{error}</p>
                 </div>
               )}
