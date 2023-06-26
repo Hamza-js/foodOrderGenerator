@@ -18,7 +18,7 @@ export default function Home() {
       <Image
         alt="Home Icon"
         src={homeIcon}
-        className="absolute top-6 right-4 cursor-pointer z-[1000]"
+        className="h-7 w-7 absolute top-6 right-6 cursor-pointer z-[1000]"
       />
 
       <div className="innerContainerHome flex justify-between flex-col relative">

@@ -101,13 +101,14 @@ export default function Requirments() {
                   Calories
                 </p>
                 <input
-                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E] `}
+                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#786761] `}
                   placeholder="Enter Calories"
                   value={calories}
                   onChange={(e) => {
                     setCalories(e.target.value);
                     // setCaloriesValid(true);
                   }}
+                  style={{ "--placeholder-color": "#b39b92" }}
                 />
                 <p
                   className={`${
@@ -122,13 +123,14 @@ export default function Requirments() {
                   Proteins
                 </p>
                 <input
-                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#9E9E9E]`}
+                  className={`min-h-[64px] sm:min-h-[8vh] w-full rounded-[10px] bg-[#FBF1EE] pl-4 outline-none text-[#786761]`}
                   placeholder="Enter Proteins"
                   value={proteins}
                   onChange={(e) => {
                     setProteins(e.target.value);
                     // setProteinsValid(true);
                   }}
+                  style={{ "--placeholder-color": "#b39b92" }}
                 />
                 <p
                   className={`${
