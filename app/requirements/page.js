@@ -108,7 +108,6 @@ export default function Requirments() {
                     setCalories(e.target.value);
                     // setCaloriesValid(true);
                   }}
-                  style={{ "--placeholder-color": "#b39b92" }}
                 />
                 <p
                   className={`${
