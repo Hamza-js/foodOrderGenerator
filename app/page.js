@@ -6,9 +6,7 @@ import BG from "../images/Home/bgpic.png";
 import homeIcon from "../images/Home/homeIcon.png";
 
 import logo from "../images/Home/logo.png";
-import {
-  ChevronRightIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -22,6 +20,11 @@ export default function Home() {
       />
 
       <div className="innerContainerHome flex justify-between flex-col relative">
+        <Image
+          alt="Home Icon"
+          src={homeIcon}
+          className="h-7 w-7 absolute top-6 right-6 cursor-pointer z-[1000]"
+        />
         <Image
           className="absolute w-full h-full max-w-[420px] sm:max-h-[90vh] sm:max-w-[390px]"
           src={BG}

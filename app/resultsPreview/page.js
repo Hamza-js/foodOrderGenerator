@@ -104,7 +104,7 @@ export default function selectSize() {
             className="innerContainerWhite flex flex-col overflow-y-auto scrollbar-none"
           >
             <Header url={pathname} />
-            <div className="mt-[75px] mb-0 sm:mt-[55px]">
+            <div className="mt-[75px] sm:mt-[55px] flex flex-col justify-between h-full">
               <div className="flex items-center justify-center flex-col text-center">
                 <h2 className="text-black font-semibold sm:text-2xl text-3xl font-sans pb-4">
                   Result
